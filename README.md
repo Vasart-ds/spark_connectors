@@ -12,9 +12,9 @@ Spark обладает возможностью подключаться к ра
 <code>
 !pip install pyspark
 from pyspark.sql import SparkSession
-spark = SparkSession.builder \<br>
-       .appName("LocalApp") \ <br>
-       .master("local[*]") \ # в данном случае [*] указывает на использование всех ядер. Если мы хотим задействовать не все ядра, то нужно указать их число - [2], например <br>
+spark = SparkSession.builder
+       .appName("LocalApp") \
+       .master("local[*]") \ # в данном случае [*] указывает на использование всех ядер. Если мы хотим задействовать не все ядра, то нужно указать их число - [2], например
        .getOrCreate()
 </code>
 
