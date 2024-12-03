@@ -19,7 +19,7 @@ systemctl --user start docker-desktop
 
 Так же проверяем работу Jupyter по адресу `localhost:8888`. **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
 * Командой `docker logs sparkbook` открываем лог контейнера и смотрим на следующую строчку:
-
+![token.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/token.jpg)
 
 Переходим по активной ссылке через Ctrl+ЛКМ и получаем 
 
