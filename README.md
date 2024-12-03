@@ -1,5 +1,8 @@
 # Подключения Spark
 
+Разделы:
+[Локальное развертывание](#local)
+
 Spark обладает возможностью подключаться к различным СУБД и DataLake. Для этого он использует точку входа SparkSession со следующими атрибутами:
 
 **.builder**
@@ -12,6 +15,7 @@ Spark обладает возможностью подключаться к ра
 
 **.getOrCreate()** - команда для инциализации.
 
+## Локально {#local}
 Например, если мы хотим использовать Spark локально (**LocalMode**), где распределением данных будут заняты потоки процессора, то для запуска будет использоваться следующий entrypoint, то есть - точка входа:
 
 ```
@@ -66,3 +70,26 @@ spark = SparkSession.builder \
 ```
 
 ## Подключение к ресурсным менеджерам
+### YARN
+```
+spark = SparkSession.builder \
+       .appName("YARNApp") \
+       .master("yarn") \
+       .getOrCreate()
+```
+
+### MESOS (аналог YARN) 
+```
+spark = SparkSession.builder \
+       .appName("MesosApp") \ 
+       .master("mesos://hostname:5050") \
+       .getOrCreate()
+```
+
+### Kubernetes
+```
+spark = SparkSession.builder \
+       .appName("KubernetesApp") \
+       .master("k8s://https://<KUBERNETES_MASTER>") \
+       .getOrCreate()
+```
