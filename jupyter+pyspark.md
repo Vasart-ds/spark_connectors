@@ -19,8 +19,16 @@ systemctl --user start docker-desktop
 
 Так же проверяем работу Jupyter по адресу `localhost:8888`. **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
 * Командой `docker logs sparkbook` открываем лог контейнера и смотрим на следующую строчку:
+
 ![token.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/token.jpg)
 
-Переходим по активной ссылке через Ctrl+ЛКМ и получаем 
+Переходим по активной ссылке через Ctrl+ЛКМ и получаем
 
-5) 
+![lab.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/lab.jpg)
+
+5) После проверки работы нашего контейнера объединяем его в сеть с `namenode` контейнеров Hadoop
+
+![network.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/network.jpg)
+
+6) Проверяем коннектор с HDFS:
+![hdfs_connect.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/hdfs_connect.jpg)
