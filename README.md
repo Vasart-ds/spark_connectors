@@ -9,12 +9,12 @@ Spark обладает возможностью подключаться к ра
 
 Например, если мы хотим использовать Spark локально (**LocalMode**), где распределением данных будут заняты потоки процессора, то для запуска будет использоваться следующий entrypoint, то есть - точка входа:
 
-<code>!pip install pyspark</code>
-<code>from pyspark.sql import SparkSession </code>
-<code>spark = SparkSession.builder </code>
-<code>       .appName("LocalApp") \ </code>
-<code>       .master("local[*]") \ # [*] указывает на использование всех ядер. Если мы хотим задействовать не все ядра, то нужно указать их число - [2], например </code>
-<code>       .getOrCreate()</code>
+```!pip install pyspark
+from pyspark.sql import SparkSession
+spark = SparkSession.builder
+       .appName("LocalApp") \ 
+       .master("local[*]") \ # [*] указывает на использование всех ядер. Если мы хотим задействовать не все ядра, то нужно указать их число - например, [2]
+       .getOrCreate()```
 
 Также мы используем `.master` в случаях, когда хотим подключиться к локальному кластеру Spark (**StandAloneMode**):
 
