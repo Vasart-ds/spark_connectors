@@ -23,7 +23,9 @@ spark = SparkSession.builder
 ```
 spark = SparkSession.builder \
       .appName("StandaloneApp") \
-      .master("spark://hostname:7077") \ # в качестве hostname можно указать как localhost, если Spark запущен из системы, либо IP контейнера, если кластер располагается в Docker
+      # в качестве hostname можно указать как localhost,
+      # если Spark запущен из системы, так и IP контейнера, если кластер располагается в Docker
+      .master("spark://hostname:7077") \
       .getOrCreate()
 ```
 
@@ -34,7 +36,8 @@ spark = SparkSession.builder \
 ```
 spark = SparkSession.builder \
     .appName("HDFSApp") \
-    .config("spark.hadoop.fs.defaultFS", "hdfs://namenode:8020") \ # аналогично Spark, необходимо указать localhost для подключения к HDFS на компьютере или же IP контейнера
+    # аналогично Spark, необходимо указать localhost для подключения к HDFS на компьютере или же IP контейнера
+    .config("spark.hadoop.fs.defaultFS", "hdfs://namenode:8020") \ 
     .getOrCreate()
 ```
 
