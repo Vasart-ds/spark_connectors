@@ -106,7 +106,3 @@ spark = SparkSession.builder \
 ```
 
 ------
-
-## Проблемы и решения
-
-
