@@ -32,3 +32,5 @@ systemctl --user start docker-desktop
 
 6) Проверяем коннектор с HDFS:
 ![hdfs_connect.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/hdfs_connect.jpg)
+
+7) В конце работы обязательно останавливаем Spark командой `spark.stop()`
