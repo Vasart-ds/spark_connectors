@@ -11,13 +11,21 @@ apt-get install ./docker-desktop-amd64.deb
 systemctl --user start docker-desktop
 ```
 2) Скачиваем образ командой
+
 `docker pull jupyter/pyspark-notebook`
 
 > Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно [здесь](https://github.com/pyhedgehog/bde2020-docker-hadoop) (2 nodes, hdfs, hive, nginx)
 > или [здесь](https://github.com/knight99rus/hadoop_full_pack) (hdfs, hive, hue, superset)
 
-4) Запускаем контейнер `docker run -d -it --name sparkbook -p 8888:8888 -p 4040:4040 -v sparkvolume:/home/media jupyter/pyspark-notebook:latest`
-5) Проверяем работу Jupyter по адресу `localhost:8888`. **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
+4) Запускаем контейнер
+
+`docker run -d -it --name sparkbook -p 8888:8888 -p 4040:4040 -v sparkvolume:/home/media jupyter/pyspark-notebook:latest`
+
+7) Проверяем работу Jupyter по адресу
+
+`localhost:8888`. 
+
+**ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
 * Командой `docker logs sparkbook` открываем лог контейнера и смотрим на следующую строчку:
 
 ![token.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/token.jpg)
