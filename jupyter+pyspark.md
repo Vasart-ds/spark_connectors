@@ -14,8 +14,7 @@ systemctl --user start docker-desktop
 
 `docker pull jupyter/pyspark-notebook`
 
-> Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно [здесь](https://github.com/pyhedgehog/bde2020-docker-hadoop) (2 nodes, hdfs, hive, nginx)
-> или [здесь](https://github.com/knight99rus/hadoop_full_pack) (hdfs, hive, hue, superset)
+> Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно взять [здесь](https://github.com/pyhedgehog/bde2020-docker-hadoop) (2 nodes, hdfs, hive, nginx)
 
 4) Запускаем контейнер
 
@@ -38,14 +37,22 @@ systemctl --user start docker-desktop
 
 ![sparkGUI.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/sparkGUI.jpg)
 
-Иногда бывает так, что WebUI не запускается. Переживать не надо, сам Spark запускается с контейнером и работает, проверить его можно через команды:
+Иногда бывает так, что WebUI не запускается. Переживать не надо: пока не выполняется никаких действий, SparkUI по умолчанию не доступен, но сам Spark работает. 
+
+Проверяется он так:
 
 ```
 docker exec -it sparkbook bash
 pyspark --version
 ```
 
-Позднее напишу как пофиксить.
+Для просмотра работы через SparkUI выполняем следующие действия (это можно не делать, а вернуться после 6) шага):
+
+![pyspark_test](https://github.com/Vasart-ds/spark_connectors/blob/master/data/pyspark_test.jpg)
+
+Переходим на `localhost:4040` и вуа-ля!
+
+![sparkui.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/sparkui.jpg)
 
 5) После проверки работы нашего контейнера объединяем его в сеть с `namenode` контейнеров Hadoop
 
@@ -57,5 +64,7 @@ pyspark --version
 Также можно посмотреть на локальную работу Spark внутри контейнера:
 
 ![selfspark.jgp](https://github.com/Vasart-ds/spark_connectors/blob/master/data/selfspark.jpg)
+
+Как выполнялись джобы можно посмотреть в SparkUI, который мы запустили созданными SparkSession.
 
 8) В конце работы обязательно останавливаем Spark командой `spark.stop()`
