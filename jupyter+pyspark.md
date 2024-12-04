@@ -36,6 +36,8 @@ docker exec -it sparkbook bash
 pyspark --version
 ```
 
+Позднее напишу как пофиксить.
+
 5) После проверки работы нашего контейнера объединяем его в сеть с `namenode` контейнеров Hadoop
 
 ![network.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/network.jpg)
@@ -43,4 +45,8 @@ pyspark --version
 6) Проверяем коннектор с HDFS:
 ![hdfs_connect.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/hdfs_connect.jpg)
 
-7) В конце работы обязательно останавливаем Spark командой `spark.stop()`
+Также можно посмотреть на локальную работу Spark внутри контейнера:
+
+![selfspark.jgp](https://github.com/Vasart-ds/spark_connectors/blob/master/data/selfspark.jpg)
+
+8) В конце работы обязательно останавливаем Spark командой `spark.stop()`
