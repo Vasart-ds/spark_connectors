@@ -1,4 +1,4 @@
-# Подключения Spark
+# Как подключить Spark к HDFS, HIVE, S3, YARN, MESOS, KUBERNETES
 
 Разделы:
 
