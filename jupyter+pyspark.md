@@ -10,7 +10,8 @@ apt-get update
 apt-get install ./docker-desktop-amd64.deb
 systemctl --user start docker-desktop
 ```
-2) Скачиваем образ командой `docker pull jupyter/pyspark-notebook`
+2) Скачиваем образ командой
+`docker pull jupyter/pyspark-notebook`
 
 > Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно [здесь](https://github.com/pyhedgehog/bde2020-docker-hadoop) (2 nodes, hdfs, hive, nginx)
 > или [здесь](https://github.com/knight99rus/hadoop_full_pack) (hdfs, hive, hue, superset)
