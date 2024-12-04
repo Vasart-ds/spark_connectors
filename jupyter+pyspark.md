@@ -23,7 +23,7 @@ systemctl --user start docker-desktop
 
 7) Проверяем работу Jupyter по адресу
 
-`localhost:8888`. 
+`localhost:8888`
 
 **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
 * Командой `docker logs sparkbook` открываем лог контейнера и смотрим на следующую строчку:
