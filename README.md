@@ -106,3 +106,19 @@ spark = SparkSession.builder \
 ```
 
 ------
+## Проблемы и решения
+### Ошибки окружения 
+* Локально
+Для решения проблемы подключения из локальной среды вам необходимо установить правильные переменные окружений.
+
+1) Убедитесь, что у вас **локально** установлены: Java, Hadoop, Spark.
+2) Далее открываем Jupyter Notebook и перед началом работы прописываем следующие команды:
+```
+import os
+
+os.environ['SPARK_HOME'] = '/path/to/spark' # Укажите пути до ваших установок (например C:\users\home\spark)
+os.environ['JAVA_HOME'] = '/path/to/java'
+os.environ['HADOOP_HOME'] = '/path/to/hadoop'
+```
+* Jupyter в контейнере
+1) Для подключения jupyter в контейнере воспользуйтесь следующей [инструкцией](https://github.com/Vasart-ds/spark_connectors/blob/master/jupyter%2Bpyspark.md)
