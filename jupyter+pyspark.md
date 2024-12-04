@@ -16,9 +16,7 @@ systemctl --user start docker-desktop
 > или [здесь](https://github.com/knight99rus/hadoop_full_pack) (hdfs, hive, hue, superset)
 
 4) Запускаем контейнер `docker run -d -it --name sparkbook -p 8888:8888 -p 4040:4040 -v sparkvolume:/home/media jupyter/pyspark-notebook:latest`
-5) Проверяем работу контейнера: переходим на `localhost:4040`. Там должен открыться Spark WebUI следующего вида:
-
-Так же проверяем работу Jupyter по адресу `localhost:8888`. **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
+5) Проверяем работу Jupyter по адресу `localhost:8888`. **ВАЖНО**: если Jupyter просит вас ввести Token ID, то выполняем следующее:
 * Командой `docker logs sparkbook` открываем лог контейнера и смотрим на следующую строчку:
 
 ![token.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/token.jpg)
@@ -26,6 +24,17 @@ systemctl --user start docker-desktop
 Переходим по активной ссылке через Ctrl+ЛКМ и получаем
 
 ![lab.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/lab.jpg)
+
+Также проверяем работу `localhost:4040`. Там должен открыться Spark WebUI следующего вида:
+
+![sparkGUI.jpg](https://github.com/Vasart-ds/spark_connectors/blob/master/data/sparkGUI.jpg)
+
+Иногда бывает так, что WebUI не запускается. Переживать не надо, сам Spark запускается с контейнером и работает, проверить его можно через команды:
+
+```
+docker exec -it sparkbook bash
+pyspark --version
+```
 
 5) После проверки работы нашего контейнера объединяем его в сеть с `namenode` контейнеров Hadoop
 
