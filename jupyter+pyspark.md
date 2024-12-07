@@ -14,7 +14,7 @@ systemctl --user start docker-desktop
 
 `docker pull jupyter/pyspark-notebook`
 
-> Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно взять [здесь](https://github.com/pyhedgehog/bde2020-docker-hadoop) (2 nodes, hdfs, hive, nginx)
+> Перед установкой желательно иметь готовый docker compose Hadoop. Взять его можно взять [здесь](https://git.astondevs.ru/laboratory/laba-data-analysis/bigdata_tools/docker-hadoop-2nodes) (2 nodes, hdfs, hive, nginx FOR ASTON ONLY) или здесь [здесь](https://github.com/big-data-europe/docker-hadoop-spark-workbench)
 
 4) Запускаем контейнер
 
