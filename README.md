@@ -116,6 +116,8 @@ spark = SparkSession.builder \
        .getOrCreate()
 ```
 
+Подробный гайд по установке Spark на Kubernetes: [Apache Spark в Kubernetes](https://habr.com/ru/companies/vk/articles/549052/)
+
 ------
 ## Проблемы и решения
 ### Ошибки окружения 
