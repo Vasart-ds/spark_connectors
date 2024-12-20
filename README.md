@@ -75,7 +75,9 @@ spark = SparkSession.builder \
 **ВАЖНО_2**: рекомендуется использовать **aws-java-sdk-bundle**, так как он позволяет избежать распространенных конфликтов и установке различных драйверов, необходимых для aws. 
 
 Скачать драйверы всех версий вы можете на сайте Mavenlib.
+
 [hadoop-aws](https://mavenlibs.com/jar/file/org.apache.hadoop/hadoop-aws)
+
 [aws-java-sdk-bundle](https://mavenlibs.com/jar/file/com.amazonaws/aws-java-sdk-bundle)
 ```
 spark = SparkSession.builder \
