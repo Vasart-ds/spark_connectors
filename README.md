@@ -71,12 +71,15 @@ spark = SparkSession.builder \
 ```
 
 ### S3
+**ВАЖНО**: при создании коннектора ОБЯЗАТЕЛЬНО нужно прописать в отдельный конфиг путь до драйверов S3. Также нужно учитывать, что драйвера подходят под разные версии Spark и могут не работать при их расхождении. В данном примере используются драйвера hadoop-aws-3.3.4.jar и aws-java-sdk-bundle-1.12.538.jar, совместимые с PySpark 3.5.0
 ```
 spark = SparkSession.builder \
        .appName("S3App") \
        .config("spark.hadoop.fs.s3a.access.key", "your-access-key") \
        .config("spark.hadoop.fs.s3a.secret.key", "your-secret-key") \
        .config("spark.hadoop.fs.s3a.endpoint", "s3.amazonaws.com") \
+       .config('spark.hadoop.fs.s3a.jars', 
+                    '/usr/local/spark-3.5.0-bin-hadoop3/jars/hadoop-aws-3.3.4.jar, /usr/local/spark-3.5.0-bin-hadoop3/jars/aws-java-sdk-bundle-1.12.538.jar')
        .getOrCreate()
 ```
 
